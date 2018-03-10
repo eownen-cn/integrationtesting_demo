@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+    <!-- Some or all of these can be flipped to true for debugging -->
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<action name="index">
+			<result>index.jsp</result>
+		</action>
+		
+		<action name="register" class="peopleAction" method="register">
+			<result name="success">registerOk.jsp</result>
+			<result name="error">registerFaild.jsp</result>
+		</action>
+		
+		<action name="login" class="peopleAction" method="login">
+			<result name="success">success.jsp</result>
+			<result name="error">faild.jsp</result>
+		</action>
+
+    </package>
+
+   
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
